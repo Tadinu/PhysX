@@ -380,7 +380,8 @@ ODBlock * ODBlock::getBlock(const char * ident,bool bRecursiveSearch)		//returns
 		else
 		{
 			ODBlockList::Iterator i;
-			for (i =  subBlocks.begin(); i != subBlocks.end(); ++i)
+			for (i =  subBlocks.begin(); i != subBlocks.end(); ++i) 
+			{
 				if (bRecursiveSearch)
 				{
 					b = (*i)->getBlock(ident,true);
@@ -392,7 +393,8 @@ ODBlock * ODBlock::getBlock(const char * ident,bool bRecursiveSearch)		//returns
 					if ((*i)->identifier && ident && strncmp((*i)->identifier,ident,OD_MAXID) == 0)
 						return (*i);
 				}
-				return NULL;
+			}
+			return NULL;
 		}
 	}
 

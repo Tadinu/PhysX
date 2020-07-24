@@ -37,7 +37,7 @@
 # define htole16(x) ( (((x) & 0x00FF) << 8) | (((x) & 0xFF00) >> 8) )
 # define letoh16(x) htole16(x)
 #else /* little endian */
-# define htole16(x) (x)
+// # define htole16(x) (x) // Already defined in /usr/include/endian.h:65
 # define letoh16(x) (x)
 #endif /* endianness */
 

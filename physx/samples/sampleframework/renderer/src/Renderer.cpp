@@ -1131,8 +1131,8 @@ static bool GenerateTextQuads(	const char* text, PxU32 nb_characters,
 			}
 
 			//
-			if((x+sx)>XMax)	XMax = x+sx;	if(x<XMin)	XMin = x;
-			if((y+sy)>YMax)	YMax = y+sy;	if(y<YMin)	YMin = y;
+			if((x+sx)>XMax)	{XMax = x+sx;}	if(x<XMin)	{XMin = x;}
+			if((y+sy)>YMax)	{YMax = y+sy;}	if(y<YMin)	{YMin = y;}
 
 			x += sx + 1.0f;
 		}

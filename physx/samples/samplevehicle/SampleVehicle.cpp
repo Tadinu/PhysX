@@ -1064,6 +1064,7 @@ void SampleVehicle::createStandardMaterials()
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+#if 0
 static const char* getPlatformName()
 {
 #if PX_X86
@@ -1076,6 +1077,7 @@ static const char* getPlatformName()
 	return "";
 #endif
 }
+#endif
 
 const char* SampleVehicle::getFocusVehicleName()
 {
@@ -1094,6 +1096,7 @@ const char* SampleVehicle::getFocusVehicleName()
 	}
 }
 
+#if 0
 static PxU32 GetFileSize(const char* name)
 {
 	if(!name)	return 0;
@@ -1110,6 +1113,7 @@ static PxU32 GetFileSize(const char* name)
 	fclose(fp);
 	return eof_ftell;
 }
+#endif
 
 void SampleVehicle::createVehicles()
 {	

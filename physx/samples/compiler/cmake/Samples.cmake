@@ -212,7 +212,8 @@ ELSE()
 ENDIF()
 
 TARGET_LINK_LIBRARIES(Samples 
-	PUBLIC SampleBase SamplePlatform SampleFramework SampleRenderer SampleToolkit PhysX PhysXPvdSDK PhysXVehicle PhysXCharacterKinematic PhysXExtensions PhysXCooking PhysXCommon PhysXFoundation SampleToolkit
+	PUBLIC SampleBase SampleFramework SampleRenderer SamplePlatform SampleToolkit
+        PUBLIC PhysX PhysXPvdSDK PhysXVehicle PhysXCharacterKinematic PhysXExtensions PhysXCooking PhysXCommon PhysXFoundation SampleToolkit
 	PUBLIC ${SAMPLES_PLATFORM_LINKED_LIBS}
 )
 

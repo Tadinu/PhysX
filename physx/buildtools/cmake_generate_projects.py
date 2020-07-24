@@ -260,15 +260,15 @@ class CMakePreset:
                 outString = outString + ' -DCMAKE_TOOLCHAIN_FILE=' + \
                     os.environ['PM_CMakeModules_PATH'] + \
                     '/linux/LinuxCrossToolchain.x86_64-unknown-linux-gnu.cmake'
-            elif self.compiler == 'clang':
-                if os.environ.get('PM_clang_PATH') is not None:
+            elif self.compiler == 'gcc':
+                if os.environ.get('PM_gcc_PATH') is not None:
                     outString = outString + ' -DCMAKE_C_COMPILER=' + \
-                        os.environ['PM_clang_PATH'] + '/bin/clang'
+                        os.environ['PM_gcc_PATH'] + '/bin/gcc'
                     outString = outString + ' -DCMAKE_CXX_COMPILER=' + \
-                        os.environ['PM_clang_PATH'] + '/bin/clang++'
+                        os.environ['PM_gcc_PATH'] + '/bin/g++'
                 else:
-                    outString = outString + ' -DCMAKE_C_COMPILER=clang'
-                    outString = outString + ' -DCMAKE_CXX_COMPILER=clang++'
+                    outString = outString + ' -DCMAKE_C_COMPILER=gcc'
+                    outString = outString + ' -DCMAKE_CXX_COMPILER=g++'
             return outString
         elif self.targetPlatform == 'linuxAarch64':
             outString = outString + ' -DTARGET_BUILD_PLATFORM=linux'

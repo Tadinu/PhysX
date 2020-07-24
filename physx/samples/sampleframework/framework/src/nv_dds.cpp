@@ -303,16 +303,17 @@ bool CDDSImage::load(string filename, bool flipImage)
     clear();
     
     // open file
-	SampleRenderer::File *fp = 0;
-	PxToolkit::fopen_s(&fp, filename.c_str(), "rb");
-    if (fp == NULL)
+    SampleRenderer::File *fp = 0;
+    PxToolkit::fopen_s(&fp, filename.c_str(), "rb");
+    if(fp == NULL) {
         return false;
+    }
 
-	bool success = load(fp, flipImage);
+    bool success = load(fp, flipImage);
 
-	fclose(fp);
+    fclose(fp);
 
-	return success;
+    return success;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -520,16 +521,17 @@ bool CDDSImage::save(std::string filename, bool flipImage)
     assert(m_type != TextureNone);
 
     // open file
-	SampleRenderer::File* fp = 0;
-	PxToolkit::fopen_s(&fp, filename.c_str(), "wb");
-    if (fp == NULL)
+    SampleRenderer::File* fp = 0;
+    PxToolkit::fopen_s(&fp, filename.c_str(), "wb");
+    if (fp == NULL) {
         return false;
+    }
 
-	bool result = save(fp, flipImage);
+    bool result = save(fp, flipImage);
 
-	fclose(fp);
+    fclose(fp);
 
-	return result;
+    return result;
 }
 
 bool CDDSImage::save(SampleRenderer::File* fp, bool flipImage)
